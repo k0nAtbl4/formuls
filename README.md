@@ -1,6 +1,7 @@
 # new_mega_formula
 
-A new Flutter project.
+My first flutter app. 
+web version: https://formuls.vercel.app/
 
 ## Getting Started
 
