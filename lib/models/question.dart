@@ -4,11 +4,13 @@ import 'answer.dart';
 
 class Question {
   final int id;
+  final int id_category;
   final int answer;
   final String question;
   final List<String> options;
   Question(
       {required this.id,
+      required this.id_category,
       required this.answer,
       required this.question,
       required this.options});
@@ -17,6 +19,7 @@ class Question {
 const List sample_data = [
   {
     "id": 1,
+    "id_category": 0,
     "question": "Формула равноускоренного движения - ______",
     "options": [
       "V = S/t",
@@ -35,6 +38,7 @@ const List sample_data = [
   // },
   {
     "id": 2,
+    "id_category": 0,
     "question": "Текст",
     "options": ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
     "answer_index": 2,

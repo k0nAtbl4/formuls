@@ -22,6 +22,7 @@ class QuestionController extends GetxController
       .map(
         (question) => Question(
             id: question['id'],
+            id_category: question['id_category'],
             question: question['question'],
             options: question['options'],
             answer: question['answer_index']),

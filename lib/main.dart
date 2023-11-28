@@ -5,7 +5,7 @@ import 'package:new_mega_formula/pages/formuls_list_page/formuls_list.dart';
 import 'package:new_mega_formula/pages/main_page/view/view.dart';
 import 'package:new_mega_formula/router/router.dart';
 
-void main() {
+void main() { 
   runApp(const MyHomePage());
 }
 class MyHomePage extends StatefulWidget {
