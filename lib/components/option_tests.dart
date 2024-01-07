@@ -1,7 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-import '../contollers/question_controller.dart';
+import '../controllers/question_controller.dart';
 
 class Option extends StatelessWidget {
   const Option({
@@ -10,7 +12,7 @@ class Option extends StatelessWidget {
     required this.index,
     required this.press,
   }) : super(key: key);
-  final String text;
+  final Image text;
   final int index;
   final VoidCallback press;
 
@@ -32,7 +34,9 @@ class Option extends StatelessWidget {
           }
 
           IconData getTheRightIcon() {
-            return getTheRightColor() == Color(0xFFE92E30) ? Icons.close : Icons.done;
+            return getTheRightColor() == Color(0xFFE92E30)
+                ? Icons.close
+                : Icons.done;
           }
 
           return InkWell(
@@ -47,10 +51,13 @@ class Option extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "${index + 1}. $text",
-                    style: TextStyle(color: getTheRightColor(), fontSize: 16),
+                  Container(
+                    child: text,                        
                   ),
+                  // Text(
+                  //   "${index + 1}. $text",
+                  //   style: TextStyle(color: getTheRightColor(), fontSize: 16),
+                  // ),
                   Container(
                     height: 26,
                     width: 26,

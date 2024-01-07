@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../contollers/question_controller.dart';
+import '../controllers/question_controller.dart';
 import '../models/question.dart';
 import 'option_tests.dart';
 
 class QuestionCard extends StatelessWidget {
   const QuestionCard({
     required Key key,
-    // it means we have to pass this
     required this.question,
   }) : super(key: key);
 
@@ -26,12 +25,7 @@ class QuestionCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text(
-            question.question,
-            style: Theme.of(context)
-                .textTheme
-                .headline6
-          ),
+          Text(question.question, style: Theme.of(context).textTheme.headline6),
           SizedBox(height: 10.0),
           ...List.generate(
             question.options.length,

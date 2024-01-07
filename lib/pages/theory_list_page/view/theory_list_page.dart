@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_mega_formula/models/theory.dart';
 
 class TheoryList extends StatefulWidget {
   const TheoryList({super.key});
@@ -6,8 +7,7 @@ class TheoryList extends StatefulWidget {
 }
 
 class _TheoryList extends State<TheoryList> {
-  String _plus_counter = "asd";
-  int _counter = 0;
+  final theory = sample_data_t;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,14 +15,16 @@ class _TheoryList extends State<TheoryList> {
         title: Text("Теория"),
       ),
       body: ListView.builder(
-          itemCount: 1,
-          itemBuilder: (context, i) => ListTile(
-                title: Text(
-                    'Ско́рость — векторная физическая величина, характеризующая \n быстроту перемещения и направление движения материальной точки \n относительно выбранной системы отсчёта.'),
-                textColor: Color.fromARGB(255, 0, 0, 0),
-           
-              ),
-              ),
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        itemCount: theory.length,
+        itemBuilder: (context, i) => ListTile(
+          contentPadding: EdgeInsets.all(10),
+          title: Text(theory[i].content),
+          shape: Border(
+            bottom: BorderSide(),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -9,6 +9,7 @@ import '../pages/formuls_list_page/formuls_list.dart';
 final routes = {
   '/': (context) => const MainPage(),
   '/formuls': (context) => const FormulList(),
+  '/aboutformul': (context) => AboutFormulScreen(category: context,),
   '/theory': (context) => const TheoryList(),
   '/tests': (context) => const TestsList(),
 };

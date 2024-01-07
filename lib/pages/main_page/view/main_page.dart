@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:catex/catex.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -13,35 +14,57 @@ class _MainPage extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Feasy",
+          style: TextStyle(),
+        ),
+      ),
+      body: Center(
         child: Column(
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const SizedBox(
-          height: 50,
-          width: 70,
-        ),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/formuls');
-          },
-          child: Text('Формулы'),
-        ),
-        ElevatedButton(
+          crossAxisAlignment: CrossAxisAlignment.center,
 
-          onPressed: () {
-            Navigator.pushNamed(context, '/theory');
-          },
-          child: Text('Теория'),
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisSize: MainAxisSize.min,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(padding: EdgeInsets.all(40)),
+              onPressed: () {
+                Navigator.pushNamed(context, '/formuls');
+              },
+              child: Text(
+                'Формулы',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.all(40),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, '/theory');
+              },
+              child: Text(
+                'Определения',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(padding: EdgeInsets.all(40)),
+              onPressed: () {
+                Navigator.pushNamed(context, '/tests');
+              },
+              child: Text(
+                'Тесты',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              ),
+            ),
+          ],
         ),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/tests');
-          },
-          child: Text('Тесты'),
-        ),
-      ],
-    ));
+      ),
+    );
   }
 }

@@ -1,40 +1,70 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:flutter/material.dart';
+// import 'package:get/get_state_manager/get_state_manager.dart';
+// import 'package:new_mega_formula/controllers/category_controller.dart';
+// import 'package:new_mega_formula/models/category.dart';
 
-import '../contollers/question_controller.dart';
-import 'question_card.dart';
-class Body extends StatelessWidget {
-  const Body({
-    required Key key,
-  }) : super(key: key);
+// import '../controllers/question_controller.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    // So that we have acccess our controller
-    QuestionController _questionController = Get.put(QuestionController());
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Divider(thickness: 1.5),
-              SizedBox(height: 20.0),
-              Expanded(
-                child: PageView.builder(
-                  // Block swipe to next qn
-                  physics: NeverScrollableScrollPhysics(),
-                  controller: _questionController.pageController,
-                  onPageChanged: _questionController.updateTheQnNum,
-                  itemCount: _questionController.questions.length,
-                  itemBuilder: (context, index) => QuestionCard(
-                      question: _questionController.questions[index], key: Key('0'),),
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
-    );
-  }
-}
+// class Option extends StatelessWidget {
+//   const Option({
+//     key,
+//     required this.text,
+//     required this.index,
+//     required this.press,
+//   }) : super(key: key);
+//   final String text;
+//   final int index;
+//   final VoidCallback press;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetBuilder<CategoryController>(
+//         init: CategoryController(),
+//         builder: (qnController) {
+//           Color getTheRightColor() {
+//             return Color.fromARGB(255, 0, 0, 0);
+//           }
+
+//           IconData getTheRightIcon() {
+//             return getTheRightColor() == Color.fromRGBO(0, 255, 247, 1)
+//                 ? Icons.close
+//                 : Icons.done;
+//           }
+
+//           return InkWell(
+//             onTap: press,
+//             child: Container(
+//               margin: EdgeInsets.only(top: 20.0),
+//               padding: EdgeInsets.all(20.0),
+//               decoration: BoxDecoration(
+//                 border: Border.all(color: getTheRightColor()),
+//                 borderRadius: BorderRadius.circular(15),
+//               ),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   Text(
+//                     "${index + 1}. $text",
+//                     style: TextStyle(color: getTheRightColor(), fontSize: 16),
+//                   ),
+//                   Container(
+//                     height: 26,
+//                     width: 26,
+//                     decoration: BoxDecoration(
+//                       color: getTheRightColor() == Color(0xFFC1C1C1)
+//                           ? Colors.transparent
+//                           : getTheRightColor(),
+//                       borderRadius: BorderRadius.circular(50),
+//                       border: Border.all(color: getTheRightColor()),
+//                     ),
+//                     child: getTheRightColor() == Color(0xFFC1C1C1)
+//                         ? null
+//                         : Icon(getTheRightIcon(), size: 16),
+//                   )
+//                 ],
+//               ),
+//             ),
+//           );
+//         });
+//   }
+// }
